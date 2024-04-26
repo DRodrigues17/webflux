@@ -1,9 +1,7 @@
-server:
 spring:
-  datasource:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5417/dbwebflux
     username: webflux
-    url: jdbc:postgresql://localhost:5417/dbwebflux
-    driverClassName: org.postgresql.Driver
     password: webflux
 
   jpa:
