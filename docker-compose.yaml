@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  db-webflux:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dbwebflux
+      POSTGRES_USER: webflux
+      POSTGRES_PASSWORD: webflux
+      PGDATA: /var/lib/postgresql/data
+
+    volumes:
+      - db-webflux:/var/lib/postgresql/data
+    ports:
+      - "5417:5432"
+volumes:
+  db-webflux:

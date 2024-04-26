@@ -1,0 +1,15 @@
+server:
+spring:
+  datasource:
+    username: webflux
+    url: jdbc:postgresql://localhost:5417/dbwebflux
+    driverClassName: org.postgresql.Driver
+    password: webflux
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: 'false'
+  docker:
+    compose:
+      enabled: true
