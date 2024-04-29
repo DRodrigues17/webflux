@@ -4,10 +4,10 @@ spring:
     username: webflux
     password: webflux
 
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: 'false'
   docker:
     compose:
       enabled: true
+logging:
+  level:
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters

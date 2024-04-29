@@ -3,10 +3,9 @@ package com.drodrigues17.webflux.controller;
 import com.drodrigues17.webflux.model.Anime;
 import com.drodrigues17.webflux.service.AnimeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
 @RestController
@@ -18,5 +17,10 @@ public class AnimeController {
   @GetMapping
   public Flux<Anime> buscarTodosAnimes() {
     return animeService.buscarTodosAnimes();
+  }
+
+  @GetMapping(path = "/{id}")
+  public Mono<Anime> buscarAnimePorid(@PathVariable Integer id) {
+    return animeService.buscarAnimePorId(id);
   }
 }
